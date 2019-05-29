@@ -9,7 +9,6 @@ export const styles = (theme: any) => ({
     marginBottom: theme.spacing.unit * 4
   },
   footer: {
-    padding: theme.spacing.unit * 2,
     marginTop: 'auto',
     backgroundColor: 'white'
   }

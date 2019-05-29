@@ -1,7 +1,6 @@
 export const styles = (theme: any) => ({
   root: {
     backgroundColor: theme.palette.common.white,
-
     alignItems: 'center',
     height: '64px',
     zIndex: theme.zIndex.appBar,
@@ -10,7 +9,7 @@ export const styles = (theme: any) => ({
   toolbar: {
     minHeight: 'auto',
     width: '100%'
-  },
+  }, 
   title: {
     marginLeft: theme.spacing.unit,
     flexGrow: 1

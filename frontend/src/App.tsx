@@ -1,25 +1,39 @@
 import React from 'react';
 
-import AppBar from './components/AppBar';
+import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
-import Footer from './components/Footer';
+
+import AppBar from './components/AppBar';
+
+import MainTopContainer from './components/MainTop';
+import MainBottomContainer from './components/MainBottom';
+
+import Card from './components/Card';
+//import Footer from './components/Footer';
+
+import pic from './assets/pic.jpg';
 
 const App: React.FC = ({ classes }: any) => {
   return (
     <>
-      <AppBar />
-      <Grid container spacing={8}>
-        <Grid item sm={6} xl={3} xs={12}>
-          <div>Sample Text</div>
+      <CssBaseline />
+      <Grid container spacing={0}>
+        <Grid item xs={12}>
+          <AppBar />
         </Grid>
-        <Grid item sm={6} xl={3} xs={12}>
-          <div>Sample Text</div>
+        <Grid item xs={12}>
+          <MainTopContainer />
         </Grid>
-        <Grid item lg={8} md={12} xl={9} xs={12}>
-          <div>Sample Text</div>
+        <Grid item xs={12}>
+          <div>Filter Container</div>
+        </Grid>
+        <Grid item xs={12}>
+          <MainBottomContainer />
+        </Grid>
+        <Grid item xs={12}>
+          <div>Footer</div>
         </Grid>
       </Grid>
-      <Footer />
     </>
   );
 };
