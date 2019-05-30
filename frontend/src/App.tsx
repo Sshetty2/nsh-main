@@ -25,13 +25,13 @@ const App: React.FC = ({ classes }: any) => {
           <MainTopContainer />
         </Grid>
         <Grid item xs={12}>
-          <div>Filter Container</div>
+          <div style={{ height: '9vh', textAlign: 'center' }}>Filter Container</div>
         </Grid>
         <Grid item xs={12}>
           <MainBottomContainer />
         </Grid>
         <Grid item xs={12}>
-          <div>Footer</div>
+          <div style={{ height: '5vh', textAlign: 'center' }}>Footer</div>
         </Grid>
       </Grid>
     </>

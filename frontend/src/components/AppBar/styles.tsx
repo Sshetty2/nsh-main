@@ -2,14 +2,14 @@ export const styles = (theme: any) => ({
   root: {
     backgroundColor: theme.palette.common.white,
     alignItems: 'center',
-    height: '64px',
+    height: '7.5vh',
     zIndex: theme.zIndex.appBar,
     flexGrow: 1
   },
   toolbar: {
     minHeight: 'auto',
     width: '100%'
-  }, 
+  },
   title: {
     marginLeft: theme.spacing.unit,
     flexGrow: 1
