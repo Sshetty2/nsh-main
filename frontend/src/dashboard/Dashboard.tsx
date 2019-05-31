@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Router } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 
@@ -15,14 +15,14 @@ import Routes from './Routes';
 // Browser history
 const browserHistory = createBrowserHistory();
 
-export default class Dashboard extends Component {
-  render() {
-    return (
-      <MuiThemeProvider theme={theme}>
-        <Router history={browserHistory}>
-          <Routes />
-        </Router>
-      </MuiThemeProvider>
-    );
-  }
-}
+const Dashboard: React.FC = () => {
+  return (
+    <MuiThemeProvider theme={theme}>
+      <Router history={browserHistory}>
+        <Routes />
+      </Router>
+    </MuiThemeProvider>
+  );
+};
+
+export default Dashboard;
