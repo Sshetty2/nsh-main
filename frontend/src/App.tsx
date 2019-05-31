@@ -3,7 +3,7 @@ import React from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 
-import AppBar from './components/AppBar';
+import Topbar from './components/Topbar';
 
 import MainTopContainer from './components/MainTop';
 import MainBottomContainer from './components/MainBottom';
@@ -19,7 +19,7 @@ const App: React.FC = ({ classes }: any) => {
       <CssBaseline />
       <Grid container spacing={0}>
         <Grid item xs={12}>
-          <AppBar />
+          <Topbar />
         </Grid>
         <Grid item xs={12}>
           <MainTopContainer />
