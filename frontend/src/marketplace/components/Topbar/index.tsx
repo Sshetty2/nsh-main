@@ -2,6 +2,8 @@ import React from 'react';
 
 import { withStyles } from '@material-ui/core/styles';
 
+import { NavLink } from 'react-router-dom';
+
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -19,9 +21,13 @@ function Topbar({ classes }: any) {
         <Typography className={classes.title} variant="h4">
           New School Heroes
         </Typography>
+
         <Typography className={classes.candidatesButton} variant="h5">
-          Candidates
+          <NavLink exact to="/dashboard">
+            Candidates
+          </NavLink>
         </Typography>
+
         <Typography className={classes.clientsButton} variant="h5">
           Clients
         </Typography>
