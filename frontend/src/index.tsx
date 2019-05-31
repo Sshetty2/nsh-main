@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import MarketPlace from './MarketPlace';
+import MarketPlace from './marketplace/MarketPlace';
 import * as serviceWorker from './serviceWorker';
 
 import { MuiThemeProvider } from '@material-ui/core/styles';
