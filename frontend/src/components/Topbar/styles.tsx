@@ -4,25 +4,26 @@ export const styles = (theme: any) => ({
     alignItems: 'center',
     height: '7.5vh',
     zIndex: theme.zIndex.appBar,
-    flexGrow: 1
+    display: 'flex'
   },
   toolbar: {
+    height: '100%',
     minHeight: 'auto',
     width: '100%'
   },
   title: {
     marginLeft: theme.spacing.unit,
-    flexGrow: 1
+    marginRight: theme.spacing.unit,
+    minWidth: '175px'
   },
-  menuButton: {
-    marginLeft: '-4px',
-    marginRight: theme.spacing.unit * 2
+  clientsButton: {
+    marginLeft: theme.spacing.unit * 2
   },
-  notificationsButton: {
+  candidatesButton: {
     marginLeft: 'auto'
   },
   signOutButton: {
-    marginLeft: theme.spacing.unit
+    marginLeft: theme.spacing.unit * 2
   }
 });
 
