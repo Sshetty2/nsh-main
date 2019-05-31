@@ -6,11 +6,11 @@
   justify-content: space-evenly;
   padding: 1% 10% 1% 10%;
   align-items: center;
-  min-height: 225px;
+  min-height: 175px;
   height: 28vh;
 }
 .Profile .user-photo {
-  height: 200px;
+  height: 175px;
   border-radius: 50%;
 }
 .Profile .user-bio-section {
