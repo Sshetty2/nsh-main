@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
-import MarketPlace from './marketplace/MarketPlace';
+// import MarketPlace from './marketplace/MarketPlace';
 import * as serviceWorker from './serviceWorker';
 
 import { MuiThemeProvider } from '@material-ui/core/styles';
@@ -14,18 +14,21 @@ import theme from './theme';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 // import { rootReducer } from './reducers';
 
+const MarketPlace = React.lazy(() => import('./marketplace/MarketPlace'));
+const Dashboard = React.lazy(() => import('./dashboard/Dashboard'));
+
 const mainApp = (
   <MuiThemeProvider theme={theme}>
     {/* <Provider store={store}> */}
     <BrowserRouter>
       <Switch>
         <Redirect exact from="/" to="/marketplace" />
-        <Route component={MarketPlace} exact path="/marketplace" />
-        {/* <Route
-          component={UserList}
-          exact
-          path="/users"
-        /> */}
+        <Suspense fallback="Loading...">
+          <Route component={MarketPlace} exact path="/marketplace" />
+        </Suspense>
+        <Suspense fallback="Loading...">
+          <Route component={Dashboard} exact path="/dashboard" />
+        </Suspense>
       </Switch>
     </BrowserRouter>
     {/* </Provider> */}
