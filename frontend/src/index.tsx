@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import MarketPlace from './MarketPlace';
 import * as serviceWorker from './serviceWorker';
 
 import { MuiThemeProvider } from '@material-ui/core/styles';
@@ -12,14 +12,22 @@ import theme from './theme';
 // import { Provider } from 'react-redux';
 // import thunk from 'redux-thunk';
 
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 // import { rootReducer } from './reducers';
 
 const mainApp = (
   <MuiThemeProvider theme={theme}>
     {/* <Provider store={store}> */}
     <BrowserRouter>
-      <App />
+      <Switch>
+        <Redirect exact from="/" to="/marketplace" />
+        <Route component={MarketPlace} exact path="/marketplace" />
+        {/* <Route
+          component={UserList}
+          exact
+          path="/users"
+        /> */}
+      </Switch>
     </BrowserRouter>
     {/* </Provider> */}
   </MuiThemeProvider>
