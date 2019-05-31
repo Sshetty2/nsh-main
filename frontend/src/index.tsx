@@ -12,16 +12,16 @@ import theme from './theme';
 // import { Provider } from 'react-redux';
 // import thunk from 'redux-thunk';
 
-// import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 // import { rootReducer } from './reducers';
 
 const mainApp = (
   <MuiThemeProvider theme={theme}>
-    {/* <Provider store={store}>
-      <BrowserRouter> */}
-    <App />
-    {/* </BrowserRouter>
-    </Provider> */}
+    {/* <Provider store={store}> */}
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+    {/* </Provider> */}
   </MuiThemeProvider>
 );
 
