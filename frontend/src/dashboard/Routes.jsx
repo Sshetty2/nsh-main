@@ -18,8 +18,8 @@ export default class Routes extends Component {
   render() {
     return (
       <Switch>
-        <Route component={Dashboard} exact path="/dashboard" />
-        <Route component={UserList} exact path="/users" />
+        <Route component={Dashboard} path="/" />
+        <Route component={UserList} path="/users" />
         <Route component={ProductList} exact path="/products" />
         <Route component={Typography} exact path="/typography" />
         <Route component={Icons} exact path="/icons" />
