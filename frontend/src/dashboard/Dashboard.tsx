@@ -17,11 +17,9 @@ const browserHistory = createBrowserHistory();
 
 const Dashboard: React.FC = () => {
   return (
-    <MuiThemeProvider theme={theme}>
-      <Router history={browserHistory}>
-        <Routes />
-      </Router>
-    </MuiThemeProvider>
+    <>
+      <Routes />
+    </>
   );
 };
 
