@@ -22,16 +22,14 @@ const mainApp = (
   <MuiThemeProvider theme={theme}>
     {/* <Provider store={store}> */}
     <BrowserRouter>
-      <Switch>
-        <Redirect exact from="/" to="/marketplace" />
-        <Suspense fallback="Loading...">
+      <Suspense fallback="Loading...">
+        <Switch>
+          <Redirect exact from="/" to="/marketplace" />
           <Route component={MarketPlace} exact path="/marketplace" />
-        </Suspense>
-        <Suspense fallback="Loading...">
           <Route component={Dashboard} exact path="/dashboard" />
-        </Suspense>
-        <Route component={NoMatch} />
-      </Switch>
+          <Route component={NoMatch} />
+        </Switch>
+      </Suspense>
     </BrowserRouter>
     {/* </Provider> */}
   </MuiThemeProvider>
