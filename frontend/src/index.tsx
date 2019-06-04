@@ -12,11 +12,13 @@ import theme from './theme';
 // import thunk from 'redux-thunk';
 
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
-import { NoMatch } from './NoMatch';
 // import { rootReducer } from './reducers';
+
+import indexRoutes from './routes/index';
 
 const MarketPlace = React.lazy(() => import('./marketplace/MarketPlace'));
 const Dashboard = React.lazy(() => import('./dashboard/Dashboard'));
+const NoMatch = React.lazy(() => import('./NoMatch'));
 
 const mainApp = (
   <MuiThemeProvider theme={theme}>
@@ -24,9 +26,9 @@ const mainApp = (
     <BrowserRouter>
       <Suspense fallback="Loading...">
         <Switch>
-          <Redirect exact from="/" to="/marketplace" />
-          <Route component={MarketPlace} exact path="/marketplace" />
-          <Route component={Dashboard} exact path="/dashboard" />
+          {indexRoutes.map((prop, key) => {
+            return <Route exact path={prop.path} component={prop.component} key={key} />;
+          })}
           <Route component={NoMatch} />
         </Switch>
       </Suspense>
