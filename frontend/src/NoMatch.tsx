@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const NoMatch = ({ location }: any) => {
+const NoMatch = ({ location }: any) => {
   return (
     <div>
       <h3>
@@ -9,3 +9,5 @@ export const NoMatch = ({ location }: any) => {
     </div>
   );
 };
+
+export default NoMatch;
