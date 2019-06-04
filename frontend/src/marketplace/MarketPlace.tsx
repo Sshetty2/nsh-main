@@ -8,10 +8,7 @@ import Topbar from './components/Topbar';
 import MainTopContainer from './components/MainTop';
 import MainBottomContainer from './components/MainBottom';
 
-import Card from './components/Card';
 //import Footer from './components/Footer';
-
-import pic from './assets/pic.jpg';
 
 const MarketPlace: React.FC = ({ location, history }: any) => {
   console.log(location, history);
