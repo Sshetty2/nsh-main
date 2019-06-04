@@ -11,13 +11,12 @@ import theme from './theme';
 // import { Provider } from 'react-redux';
 // import thunk from 'redux-thunk';
 
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 // import { rootReducer } from './reducers';
 
-import indexRoutes from './routes/index';
+import dashboardRoutes from './dashboard/Routes';
 
 const MarketPlace = React.lazy(() => import('./marketplace/MarketPlace'));
-const Dashboard = React.lazy(() => import('./dashboard/Dashboard'));
 const NoMatch = React.lazy(() => import('./NoMatch'));
 
 const mainApp = (
@@ -26,7 +25,8 @@ const mainApp = (
     <BrowserRouter>
       <Suspense fallback="Loading...">
         <Switch>
-          {indexRoutes.map((prop, key) => {
+          <Route exact path="/" component={MarketPlace} />
+          {dashboardRoutes.map((prop, key) => {
             return <Route exact path={prop.path} component={prop.component} key={key} />;
           })}
           <Route component={NoMatch} />
