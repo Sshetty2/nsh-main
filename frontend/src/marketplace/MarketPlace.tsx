@@ -3,7 +3,8 @@ import React from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 
-import Topbar from './components/Topbar';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 import MainTopContainer from './components/MainTop';
 import MainBottomContainer from './components/MainBottom';
@@ -17,7 +18,7 @@ const MarketPlace: React.FC = ({ location, history }: any) => {
       <CssBaseline />
       <Grid container spacing={0}>
         <Grid item xs={12}>
-          <Topbar />
+          <Header />
         </Grid>
         <Grid item xs={12}>
           <MainTopContainer />
@@ -29,7 +30,7 @@ const MarketPlace: React.FC = ({ location, history }: any) => {
           <MainBottomContainer />
         </Grid>
         <Grid item xs={12}>
-          <div style={{ height: '5vh', textAlign: 'center' }}>Footer</div>
+          <Footer />
         </Grid>
       </Grid>
     </>
