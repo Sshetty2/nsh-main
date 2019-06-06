@@ -14,7 +14,7 @@ import SignoutIcon from '@material-ui/icons/ExitToAppOutlined';
 
 import styles from './styles';
 
-function Topbar({ classes }: any) {
+function Header({ classes }) {
   return (
     <AppBar className={classes.root} position="static">
       <Toolbar className={classes.toolbar}>
@@ -39,4 +39,4 @@ function Topbar({ classes }: any) {
   );
 }
 
-export default withStyles(styles)(Topbar);
+export default withStyles(styles)(Header);
