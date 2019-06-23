@@ -11,28 +11,32 @@ import MainBottomContainer from './components/MainBottom';
 
 //import Footer from './components/Footer';
 
+import '../marketplace/index.css'
+
 const MarketPlace: React.FC = ({ location, history }: any) => {
   console.log(location, history);
   return (
     <>
       <CssBaseline />
-      <Grid container spacing={0}>
-        <Grid item xs={12}>
-          <Header />
+      <div className="body">
+        <Grid container spacing={0}>
+          <Grid item xs={12}>
+            <Header />
+          </Grid>
+          <Grid item xs={12}>
+            <MainTopContainer />
+          </Grid>
+          <Grid item xs={12}>
+            <div style={{ height: '9vh', textAlign: 'center' }}>Filter Container</div>
+          </Grid>
+          <Grid item xs={12}>
+            <MainBottomContainer />
+          </Grid>
+          <Grid item xs={12}>
+            <Footer />
+          </Grid>
         </Grid>
-        <Grid item xs={12}>
-          <MainTopContainer />
-        </Grid>
-        <Grid item xs={12}>
-          <div style={{ height: '9vh', textAlign: 'center' }}>Filter Container</div>
-        </Grid>
-        <Grid item xs={12}>
-          <MainBottomContainer />
-        </Grid>
-        <Grid item xs={12}>
-          <Footer />
-        </Grid>
-      </Grid>
+      </div>
     </>
   );
 };
