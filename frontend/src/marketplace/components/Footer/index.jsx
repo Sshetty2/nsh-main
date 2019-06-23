@@ -1,4 +1,6 @@
 import React from 'react';
+import Paper from '@material-ui/core/Paper';
+
 
 import { withStyles } from '@material-ui/core/styles';
 
@@ -23,8 +25,9 @@ function StickyFooter({ classes }) {
   return (
     <div className={classes.root}>
       <footer className={classes.footer}>
-        <Typography variant="body1">My sticky footer can be found here.</Typography>
-        <MadeWithLove />
+        <div style={{height:'5vh'}}>
+          <Typography variant="body1">My sticky footer can be found here.</Typography>
+        </div>
       </footer>
     </div>
   );
