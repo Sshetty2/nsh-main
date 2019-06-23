@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, lazy } from 'react';
 import ReactDOM from 'react-dom';
 // import MarketPlace from './marketplace/MarketPlace';
 import * as serviceWorker from './serviceWorker';
@@ -15,22 +15,30 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 // import { rootReducer } from './reducers';
 
 import dashboardRoutes from './dashboard/Routes';
+import Loader from './Loader';
 
-const MarketPlace = React.lazy(() => import('./marketplace/MarketPlace'));
+const MarketPlace = lazy(() => {
+  return Promise.all([
+    import('./marketplace/MarketPlace'),
+    new Promise(resolve => setTimeout(resolve, 1000))
+  ]).then(([moduleExports]) => moduleExports);
+});
+
+// const MarketPlace = React.lazy(() => import('./marketplace/MarketPlace'));
 const NoMatch = React.lazy(() => import('./NoMatch'));
 
 const mainApp = (
   <MuiThemeProvider theme={theme}>
     {/* <Provider store={store}> */}
     <BrowserRouter>
-      <Suspense fallback="Loading...">
-        <Switch>
-          <Route exact path="/" component={MarketPlace} />
-          {dashboardRoutes.map((prop, key) => {
-            return <Route exact path={prop.path} component={prop.component} key={key} />;
-          })}
-          <Route component={NoMatch} />
-        </Switch>
+      <Suspense fallback={<Loader />}>
+      <Switch>
+        <Route exact path="/" component={MarketPlace} />
+        {dashboardRoutes.map((prop, key) => {
+          return <Route exact path={prop.path} component={prop.component} key={key} />;
+        })}
+        <Route component={NoMatch} />
+      </Switch>
       </Suspense>
     </BrowserRouter>
     {/* </Provider> */}
