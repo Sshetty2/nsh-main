@@ -32,13 +32,13 @@ const mainApp = (
     {/* <Provider store={store}> */}
     <BrowserRouter>
       <Suspense fallback={<Loader />}>
-      <Switch>
-        <Route exact path="/" component={MarketPlace} />
-        {dashboardRoutes.map((prop, key) => {
-          return <Route exact path={prop.path} component={prop.component} key={key} />;
-        })}
-        <Route component={NoMatch} />
-      </Switch>
+        <Switch>
+          <Route exact path="/" component={MarketPlace} />
+          {dashboardRoutes.map((prop, key) => {
+            return <Route exact path={prop.path} component={prop.component} key={key} />;
+          })}
+          <Route component={NoMatch} />
+        </Switch>
       </Suspense>
     </BrowserRouter>
     {/* </Provider> */}
