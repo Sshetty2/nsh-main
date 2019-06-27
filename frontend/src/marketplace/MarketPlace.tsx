@@ -11,7 +11,7 @@ import MainBottomContainer from './components/MainBottom';
 
 //import Footer from './components/Footer';
 
-import '../marketplace/index.css'
+import '../marketplace/index.css';
 
 const MarketPlace: React.FC = ({ location, history }: any) => {
   console.log(location, history);
